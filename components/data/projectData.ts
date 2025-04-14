@@ -54,18 +54,27 @@ export const resourceCategories = [
         description: "Simple breathing techniques to calm anxiety",
         link: "/resources/anxiety/breathing",
         image: "/image/anxiety1.jpg",
+        technique: "4-7-8 Breathing Technique (NHS, Dr. Andrew Weil)",
+        techniqueDetails:
+          "Inhale through your nose for 4 seconds, hold for 7 seconds, and exhale slowly through your mouth for 8 seconds. Helps calm the nervous system and reduce anxiety.",
       },
       {
         title: "Understanding Stress Triggers",
         description: "Learn to identify and manage your stress triggers",
         link: "/resources/anxiety/triggers",
         image: "/image/anxiety2.jpg",
+        technique: "Stress Diary (NHS)",
+        techniqueDetails:
+          "Track times when you feel stressed, note situations, thoughts, and physical sensations. Helps in recognizing patterns and managing triggers.",
       },
       {
         title: "Grounding Techniques",
         description: "Stay present with these grounding methods",
         link: "/resources/anxiety/grounding",
         image: "/image/anxiety3.jpg",
+        technique: "5-4-3-2-1 Grounding (Mind UK)",
+        techniqueDetails:
+          "Name 5 things you can see, 4 you can touch, 3 you can hear, 2 you can smell, and 1 you can taste. Anchors you in the present moment.",
       },
     ],
   },
@@ -80,19 +89,27 @@ export const resourceCategories = [
         description: "Simple activities to help combat depression",
         link: "/resources/depression/activation",
         image: "/image/depression1.jpg",
+        technique: "Behavioral Activation (CBT-Based)",
+        techniqueDetails:
+          "Schedule positive or goal-oriented activities even when motivation is low. Helps break the cycle of avoidance and low mood.",
       },
       {
         title: "Challenging Negative Thoughts",
-        description:
-          "Techniques to identify and reframe negative thinking patterns",
+        description: "Techniques to identify and reframe negative thinking patterns",
         link: "/resources/depression/thoughts",
         image: "/image/depression2.jpg",
+        technique: "Cognitive Restructuring (CBT)",
+        techniqueDetails:
+          "Identify negative thoughts, evaluate their accuracy, and replace them with more balanced alternatives.",
       },
       {
         title: "Self-Compassion Practices",
         description: "Learning to be kind to yourself during difficult times",
         link: "/resources/depression/compassion",
         image: "/image/depression3.jpg",
+        technique: "Self-Compassion Break (Dr. Kristin Neff)",
+        techniqueDetails:
+          "Acknowledge your suffering, remember you're not alone, and offer yourself kind words. Builds emotional resilience.",
       },
     ],
   },
@@ -107,18 +124,27 @@ export const resourceCategories = [
         description: "Steps to establish a healthy bedtime routine",
         link: "/resources/sleep/routine",
         image: "/image/sleep1.jpg",
+        technique: "Consistent Sleep Schedule (NHS)",
+        techniqueDetails:
+          "Go to bed and wake up at the same time daily, even on weekends. Regulates your body clock for better sleep.",
       },
       {
         title: "Managing Sleep Anxiety",
         description: "Techniques to calm your mind before sleep",
         link: "/resources/sleep/anxiety",
         image: "/image/sleep2.jpg",
+        technique: "Progressive Muscle Relaxation (WHO, NHS)",
+        techniqueDetails:
+          "Tense and relax each muscle group starting from your toes to your head. Reduces physical tension and quiets the mind.",
       },
       {
         title: "Bedroom Environment Optimization",
         description: "How to create the ideal sleep environment",
         link: "/resources/sleep/environment",
         image: "/image/sleep3.jpg",
+        technique: "Sleep Hygiene Optimization (CDC, NHS)",
+        techniqueDetails:
+          "Keep the room dark, cool, and quiet. Avoid screens before bed and use the bed only for sleep to train your brain.",
       },
     ],
   },
@@ -133,23 +159,31 @@ export const resourceCategories = [
         description: "Techniques to identify and name your emotions",
         link: "/resources/emotional/awareness",
         image: "/image/emotional1.jpg",
+        technique: "Emotion Labeling (DBT)",
+        techniqueDetails:
+          "Pause and name what you're feeling (e.g., 'I'm feeling anxious'). Increases emotional clarity and reduces overwhelm.",
       },
       {
         title: "Distress Tolerance Skills",
         description: "Managing overwhelming emotions in the moment",
         link: "/resources/emotional/distress",
         image: "/image/emotional2.jpg",
+        technique: "TIPP Skills (DBT)",
+        techniqueDetails:
+          "Temperature (cold water), Intense exercise, Paced breathing, and Progressive muscle relaxation help regulate intense emotions.",
       },
       {
         title: "Healthy Emotional Expression",
         description: "Constructive ways to express difficult emotions",
         link: "/resources/emotional/expression",
         image: "/image/emotional3.jpg",
+        technique: "I-Statements (CBT & Communication Therapy)",
+        techniqueDetails:
+          "Express emotions constructively: 'I feel [emotion] when [situation] because [reason]'. Promotes healthy communication.",
       },
     ],
   },
 ];
-
 export const quickResponses = [
   "I'm feeling anxious",
   "I can't sleep",
