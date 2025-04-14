@@ -2,6 +2,7 @@ import { ExternalResourceCard } from "@/components/atom/externalResourceCard";
 import { ResourceCard } from "@/components/atom/resourceCard";
 import { resourceCategories } from "@/components/data/projectData";
 import { Input } from "@/components/ui/input";
+import Modal from "@/components/atom/modal/modal";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Search } from "lucide-react";
 
