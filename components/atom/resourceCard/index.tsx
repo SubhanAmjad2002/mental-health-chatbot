@@ -19,7 +19,6 @@ export function ResourceCard({
   icon: Icon,
 }: ResourceCardProps) {
   return (
-    <Link href={link}>
       <Card className="overflow-hidden hover:shadow-md transition-all duration-300 h-full border-none shadow">
         <div className="aspect-video relative overflow-hidden">
           <img
@@ -37,6 +36,5 @@ export function ResourceCard({
           <p className="text-muted-foreground text-sm">{description}</p>
         </CardContent>
       </Card>
-    </Link>
   );
 }
