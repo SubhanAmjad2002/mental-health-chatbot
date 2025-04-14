@@ -47,15 +47,36 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {resourceCategories.flatMap((category) =>
               category.resources.map((resource, idx) => (
-                <ResourceCard
-                  key={`${category.id}-${idx}`}
-                  title={resource.title}
-                  description={resource.description}
-                  link={resource.link}
-                  image={resource.image}
-                  category={category.title}
-                  icon={category.icon}
-                />
+                <Modal
+                  key={idx}
+                  title={resource?.title}
+                  className="md:max-w-[1000px]"
+                  trigger={
+                    <ResourceCard
+                      title={resource.title}
+                      description={resource.description}
+                      link={resource.link}
+                      image={resource.image}
+                      category={category.title}
+                      icon={category.icon}
+                    />
+                  }
+                >
+                  <div className="flex md:flex-row flex-col items-center gap-4">
+                    <aside>
+                      <img
+                        src={resource.image || "/placeholder.svg"}
+                        alt={resource.title}
+                        className="object-cover w-full h-full rounded-2xl"
+                      />
+                    </aside>
+                    <aside className="flex flex-col gap-1">
+                      <strong>Category: <em className="font-normal text-gray-600">{category.title}</em></strong>
+                      <strong>Technique: <em className="font-normal text-gray-600">{resource.technique}</em></strong>
+                      <p><strong>Procedure:</strong> {resource?.techniqueDetails}</p>
+                    </aside>
+                  </div>
+                </Modal>
               ))
             )}
           </div>
