@@ -138,7 +138,7 @@ const HOW_ARE_YOU_PHRASES = [
 
     // Check for "how are you" type questions
     if (
-      HOW_ARE_YOU_PHRASES.some((phrase) => userWords.includes(phrase))
+      HOW_ARE_YOU_PHRASES.some((phrase) => input?.toLowerCase()?.trim()?.includes(phrase))
     ) {
       setChat([
         ...chat,
