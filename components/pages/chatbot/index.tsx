@@ -121,33 +121,35 @@ const HOW_ARE_YOU_PHRASES = [
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  const normalizedInput = input.toLowerCase().trim();
+    const userWords = input.toLowerCase().split(/\s+/);
 
-  // Check for greeting
-  if (GREETINGS.some((greet) => normalizedInput.includes(greet))) {
-    setChat([
-      ...chat,
-      { user: input, bot: "Hello! I'm here to support you. How can I help?" },
-    ]);
-    setIsLoading(true);
-    setInterval(() => setIsLoading(false), 2000);
-    setInput("");
-    setSuggestions([]);
-    return "Hello! I'm here to support you. How can I help?";
-  }
+    // Check for greeting
+    if (GREETINGS.some((greet) => userWords.includes(greet))) {
+      setChat([
+        ...chat,
+        { user: input, bot: "Hello! I'm here to support you. How can I help?" },
+      ]);
+      setIsLoading(true);
+      setInterval(() => setIsLoading(false), 2000);
+      setInput("");
+      setSuggestions([]);
+      return "Hello! I'm here to support you. How can I help?";
+    }
 
-  // Check for "how are you" type questions
-  if (HOW_ARE_YOU_PHRASES.some((phrase) => normalizedInput.includes(phrase))) {
-    setChat([
-      ...chat,
-      { user: input, bot: "I'm fine, thank you! How can I help you today?" },
-    ]);
-    setIsLoading(true);
-    setInterval(() => setIsLoading(false), 2000);
-    setInput("");
-    setSuggestions([]);
-    return "I'm fine, thank you! How can I help you today?";
-  }
+    // Check for "how are you" type questions
+    if (
+      HOW_ARE_YOU_PHRASES.some((phrase) => userWords.includes(phrase))
+    ) {
+      setChat([
+        ...chat,
+        { user: input, bot: "I'm fine, thank you! How can I help you today?" },
+      ]);
+      setIsLoading(true);
+      setInterval(() => setIsLoading(false), 2000);
+      setInput("");
+      setSuggestions([]);
+      return "I'm fine, thank you! How can I help you today?";
+    }
     const scoredResponses = responses.map((response: any) => {
       console.log(response)
       const matchCount = response.keywords.reduce(
