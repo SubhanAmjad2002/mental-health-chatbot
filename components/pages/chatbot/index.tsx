@@ -72,7 +72,52 @@ export default function ChatbotPage() {
     setInput("");
     setSuggestions([]);
   };
-  const GREETINGS = ["hi", "hello", "hey", "greetings"];
+const GREETINGS = [
+  "hi",
+  "hello",
+  "hey",
+  "heya",
+  "hiya",
+  "howdy",
+  "greetings",
+  "yo",
+  "sup",
+  "what's up",
+  "good morning",
+  "good afternoon",
+  "good evening",
+  "morning",
+  "afternoon",
+  "evening",
+  "hey there",
+  "hello there",
+  "hi there",
+  "yo there",
+  "wassup",
+  "sup bro",
+  "hola",
+  "salutations",
+  "namaste",
+  "bonjour",
+  "holla",
+  "shalom",
+  "peace",
+  "👋",
+  "✌️",
+  "😊",
+  "🙋",
+  "🙋‍♂️",
+  "🙋‍♀️"
+];
+
+
+const HOW_ARE_YOU_PHRASES = [
+  "how are you", "how are you doing", "how's it going", "how do you do",
+  "how are things", "how's everything", "how have you been", "how you doing",
+  "you good", "you okay", "you alright", "what's going on", "what's new",
+  "how's life", "how's your day", "how’s your day going", "how’s your morning",
+  "how’s your evening", "how’s your week", "how’s it hanging", "everything good", "all good"
+];
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -90,7 +135,18 @@ export default function ChatbotPage() {
       setSuggestions([]);
       return "Hello! I'm here to support you. How can I help?";
     }
-
+  // Check for "how are you" type questions
+  if (HOW_ARE_YOU_PHRASES.some((phrase) => normalizedInput.includes(phrase))) {
+    setChat([
+      ...chat,
+      { user: input, bot: "I'm fine, thank you! How can I help you today?" },
+    ]);
+    setIsLoading(true);
+    setInterval(() => setIsLoading(false), 2000);
+    setInput("");
+    setSuggestions([]);
+    return "I'm fine, thank you! How can I help you today?";
+  }
     const scoredResponses = responses.map((response: any) => {
       console.log(response)
       const matchCount = response.keywords.reduce(
