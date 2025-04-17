@@ -121,20 +121,21 @@ const HOW_ARE_YOU_PHRASES = [
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const userWords = input.toLowerCase().split(/\s+/);
+  const normalizedInput = input.toLowerCase().trim();
 
-    // Check for greeting
-    if (GREETINGS.some((greet) => userWords.includes(greet))) {
-      setChat([
-        ...chat,
-        { user: input, bot: "Hello! I'm here to support you. How can I help?" },
-      ]);
-      setIsLoading(true);
-      setInterval(() => setIsLoading(false), 2000);
-      setInput("");
-      setSuggestions([]);
-      return "Hello! I'm here to support you. How can I help?";
-    }
+  // Check for greeting
+  if (GREETINGS.some((greet) => normalizedInput.includes(greet))) {
+    setChat([
+      ...chat,
+      { user: input, bot: "Hello! I'm here to support you. How can I help?" },
+    ]);
+    setIsLoading(true);
+    setInterval(() => setIsLoading(false), 2000);
+    setInput("");
+    setSuggestions([]);
+    return "Hello! I'm here to support you. How can I help?";
+  }
+
   // Check for "how are you" type questions
   if (HOW_ARE_YOU_PHRASES.some((phrase) => normalizedInput.includes(phrase))) {
     setChat([
